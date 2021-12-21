@@ -32,6 +32,7 @@ namespace Advent_of_Code.Days
                 int.Parse(inputMatch.Groups[2].Value),
                 int.Parse(inputMatch.Groups[3].Value));
         }
+
         internal override void SolvePuzzle1()
         {
             int minVelocityX = 1;

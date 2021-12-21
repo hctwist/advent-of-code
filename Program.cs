@@ -2,13 +2,25 @@
 using Advent_of_Code;
 using System.Diagnostics;
 
-string horizontalBar = "---";
+ConsoleColor defaultConsoleColor = Console.ForegroundColor;
+
+Console.WriteLine();
+Console.WriteLine("Advent of Code 2021");
+Console.WriteLine(@"
+   .-.                                                   \ /
+  ( (                                |                  - * -
+   '-`                              -+-                  / \
+            \            o          _|_          \
+            ))          }^{        /___\         ))
+          .-#-----.     /|\     .---'-'---.    .-#-----.
+     ___ /_________\   //|\\   /___________\  /_________\  
+    /___\ |[] _ []|    //|\\    | A /^\ A |    |[] _ []| _.O,_
+....|'#'|.|  |*|  |...///|\\\...|   |'|   |....|  |*|  |..(^)....");
+Console.WriteLine();
+Console.WriteLine();
 
 while (true)
 {
-    Console.WriteLine("~~~ The Advent of Code ~~~");
-    Console.WriteLine();
-
     Console.Write("Solve day: ");
     string? dayInput = Console.ReadLine();
     Console.WriteLine();
@@ -21,10 +33,6 @@ while (true)
 
     if (TryGetAdventDay(day, out AdventDay? adventDay))
     {
-        Console.WriteLine($"Attempting to solve day {day}");
-        Console.WriteLine(horizontalBar);
-        Console.WriteLine();
-
         Stopwatch stopwatch = new();
 
         stopwatch.Start();
@@ -41,16 +49,16 @@ while (true)
         stopwatch.Stop();
         double solution2TotalSeconds = stopwatch.Elapsed.TotalSeconds;
 
+        Console.ForegroundColor = ConsoleColor.DarkGray;
         Console.WriteLine();
-        Console.WriteLine(horizontalBar);
-        Console.WriteLine($"Attempt completed in {solution1TotalSeconds + solution2TotalSeconds} seconds ({solution1TotalSeconds} for solution 1 and {solution2TotalSeconds} for solution 2)");
+        Console.WriteLine($"Completed in {solution1TotalSeconds + solution2TotalSeconds:0.0####} seconds ({solution1TotalSeconds:0.0####}s + {solution2TotalSeconds:0.0####}s)");
+        Console.ForegroundColor = defaultConsoleColor;
     }
     else
     {
-        Console.WriteLine($"Couldn't find a solution for day {day}");
+        Console.WriteLine($"Couldn't find a solution for day {day}.");
     }
 
-    Console.WriteLine();
     Console.WriteLine();
     Console.WriteLine();
     Console.WriteLine();

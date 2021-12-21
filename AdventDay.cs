@@ -35,7 +35,7 @@ namespace Advent_of_Code
         /// <returns>The whole file contents as a string.</returns>
         protected string GetInputData()
         {
-            return File.ReadAllText($@"X:\Projects\Advent of Code\Advent of Code\InputData\{GetType().Name}.txt");
+            return File.ReadAllText($@"InputData\{GetType().Name}.txt");
         }
 
         /// <summary>
@@ -78,7 +78,6 @@ namespace Advent_of_Code
         /// <param name="solution">The solution.</param>
         protected static void WriteSolution2(object solution)
         {
-            Console.WriteLine();
             Console.WriteLine("Solution 2:");
             Console.WriteLine(solution);
         }
