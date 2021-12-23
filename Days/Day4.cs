@@ -62,7 +62,7 @@ namespace Advent_of_Code.Days
             return board;
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             foreach (int draw in drawOrder)
             {
@@ -70,14 +70,15 @@ namespace Advent_of_Code.Days
                 {
                     if (board.TryMark(draw) && board.IsComplete)
                     {
-                        WriteSolution1(GetBoardScore(board, draw));
-                        return;
+                        return GetBoardScore(board, draw);
                     }
                 }
             }
+
+            return NoSolutionFound;
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             HashSet<BingoBoard> remainingBoards = new(bingoBoards);
             List<BingoBoard> newlyCompletedBoards = new();
@@ -107,14 +108,15 @@ namespace Advent_of_Code.Days
                     {
                         if (lastBoard.TryMark(drawOrder[i]) && lastBoard.IsComplete)
                         {
-                            WriteSolution2(GetBoardScore(lastBoard, drawOrder[i]));
-                            return;
+                            return GetBoardScore(lastBoard, drawOrder[i]);
                         }
                     }
                 }
 
                 newlyCompletedBoards.Clear();
             }
+
+            return NoSolutionFound;
         }
 
         /// <summary>

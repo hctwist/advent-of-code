@@ -32,7 +32,7 @@ namespace Advent_of_Code.Days
                 1);
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             DeterministicDie die = new();
 
@@ -48,22 +48,22 @@ namespace Advent_of_Code.Days
 
                 if (state.Player1State.Score >= 1000)
                 {
-                    WriteSolution1(totalDiceRolls * state.Player2State.Score);
+                    return totalDiceRolls * state.Player2State.Score;
                     break;
                 }
                 else if (state.Player2State.Score >= 1000)
                 {
-                    WriteSolution1(totalDiceRolls * state.Player1State.Score);
+                    return totalDiceRolls * state.Player1State.Score;
                     break;
                 }
             }
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             QuantumGame game = new(startingState);
             QuantumGame.Wins wins = game.CountPlayerWins();
-            WriteSolution2(Math.Max(wins.Player1Wins, wins.Player2Wins));
+            return Math.Max(wins.Player1Wins, wins.Player2Wins);
         }
 
         /// <summary>

@@ -32,16 +32,16 @@ namespace Advent_of_Code.Days
             }
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             int[,] ventMap = BuildVentMap(ventLines.Where(line => line.Start.X == line.End.X | line.Start.Y == line.End.Y));
-            WriteSolution1(CountOverlappingVents(ventMap));
+            return CountOverlappingVents(ventMap);
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             int[,] ventMap = BuildVentMap(ventLines);
-            WriteSolution1(CountOverlappingVents(ventMap));
+            return CountOverlappingVents(ventMap);
         }
 
         /// <summary>

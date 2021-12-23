@@ -21,7 +21,7 @@ namespace Advent_of_Code.Days
             instructions = GetInputData("\n", MoveInstruction.Parse);
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             int horizontalPosition = 0;
             int depth = 0;
@@ -42,10 +42,10 @@ namespace Advent_of_Code.Days
                 }
             }
 
-            WriteSolution1(horizontalPosition * depth);
+            return horizontalPosition * depth;
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             int aim = 0;
             int horizontalPosition = 0;
@@ -68,7 +68,7 @@ namespace Advent_of_Code.Days
                 }
             }
 
-            WriteSolution2(horizontalPosition * depth);
+            return horizontalPosition * depth;
         }
 
         /// <summary>

@@ -21,14 +21,14 @@ namespace Advent_of_Code.Days
             depths = GetInputData("\n", int.Parse);
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
-            WriteSolution1(CountNumberOfIncreases(depths, 1));
+            return CountNumberOfIncreases(depths, 1);
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
-            WriteSolution2(CountNumberOfIncreases(depths, 3));
+            return CountNumberOfIncreases(depths, 3);
         }
 
         /// <summary>

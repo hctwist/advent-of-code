@@ -66,20 +66,20 @@ namespace Advent_of_Code.Days
             return (new Paper(points), instructions);
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             paper.Fold(instructions[0]);
-            WriteSolution1(paper.Points.Count);
+            return paper.Points.Count;
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             foreach (FoldInstruction instruction in instructions)
             {
                 paper.Fold(instruction);
             }
 
-            WriteSolution2(paper);
+            return paper;
         }
 
         public override void Reset()

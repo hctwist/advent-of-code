@@ -41,7 +41,7 @@ namespace Advent_of_Code.Days
             CollectOctopi();
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             int totalFlashes = 0;
 
@@ -50,10 +50,10 @@ namespace Advent_of_Code.Days
                 totalFlashes += Step();
             }
 
-            WriteSolution1(totalFlashes);
+            return totalFlashes;
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             int numberOfOctopi = octopi.Length;
 
@@ -61,12 +61,11 @@ namespace Advent_of_Code.Days
             {
                 if (Step() == numberOfOctopi)
                 {
-                    WriteSolution2(i + 1);
-                    return;
+                    return i + 1;
                 }
             }
 
-            WriteSolution2($"Could not find solution in {int.MaxValue} iterations.");
+            return $"Could not find solution in {int.MaxValue} iterations.";
         }
 
         public override void Reset()

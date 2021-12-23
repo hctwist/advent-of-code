@@ -38,14 +38,14 @@ namespace Advent_of_Code.Days
             }
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
-            WriteSolution1(GetCharacterCountRangeAfterInsertions(10));
+            return GetCharacterCountRangeAfterInsertions(10);
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
-            WriteSolution2(GetCharacterCountRangeAfterInsertions(40));
+            return GetCharacterCountRangeAfterInsertions(40);
         }
 
         /// <summary>

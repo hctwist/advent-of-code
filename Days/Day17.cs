@@ -33,7 +33,7 @@ namespace Advent_of_Code.Days
                 int.Parse(inputMatch.Groups[3].Value));
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             int minVelocityX = 1;
             int maxVelocityX = targetArea.Right + 1;
@@ -55,10 +55,10 @@ namespace Advent_of_Code.Days
                 }
             }
 
-            WriteSolution1(maxY);
+            return maxY;
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             int minVelocityX = 1;
             int maxVelocityX = targetArea.Right + 1;
@@ -80,7 +80,7 @@ namespace Advent_of_Code.Days
                 }
             }
 
-            WriteSolution2(count);
+            return count;
         }
 
         /// <summary>

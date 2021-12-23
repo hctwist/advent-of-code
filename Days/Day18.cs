@@ -74,7 +74,7 @@ namespace Advent_of_Code.Days
             return new SnailfishNumber(numbers);
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             SnailfishNumber startingNumber = numbers[0].Copy();
 
@@ -83,10 +83,10 @@ namespace Advent_of_Code.Days
                 startingNumber.Add(number);
             }
 
-            WriteSolution1(startingNumber.Magnitude());
+            return startingNumber.Magnitude();
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             int bestMagnitude = 0;
 
@@ -105,7 +105,7 @@ namespace Advent_of_Code.Days
                 }
             }
 
-            WriteSolution2(bestMagnitude);
+            return bestMagnitude;
         }
 
         /// <summary>

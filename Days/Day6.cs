@@ -21,14 +21,14 @@ namespace Advent_of_Code.Days
             startingFishTimers = GetInputData(",", int.Parse);
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
-            WriteSolution1(SimulateLanternFish(80).Sum());
+            return SimulateLanternFish(80).Sum();
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
-            WriteSolution1(SimulateLanternFish(256).Sum());
+            return SimulateLanternFish(256).Sum();
         }
 
         /// <summary>

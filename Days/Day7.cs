@@ -18,14 +18,14 @@ namespace Advent_of_Code.Days
             crabPositions = GetInputData(",", int.Parse);
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
-            WriteSolution1(GetMinimumFuelCost(x => x));
+            return GetMinimumFuelCost(x => x);
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
-            WriteSolution2(GetMinimumFuelCost(x => x * (x + 1) / 2));
+            return GetMinimumFuelCost(x => x * (x + 1) / 2);
         }
 
         /// <summary>

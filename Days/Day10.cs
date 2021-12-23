@@ -58,7 +58,7 @@ namespace Advent_of_Code.Days
             };
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             int score = 0;
 
@@ -70,10 +70,10 @@ namespace Advent_of_Code.Days
                 }
             }
 
-            WriteSolution1(score);
+            return score;
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             List<long> scores = new(lines.Count);
 
@@ -95,7 +95,7 @@ namespace Advent_of_Code.Days
 
             scores.Sort();
 
-            WriteSolution2(scores[scores.Count / 2]);
+            return scores[scores.Count / 2];
         }
 
         /// <summary>

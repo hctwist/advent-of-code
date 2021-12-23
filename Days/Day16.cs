@@ -50,16 +50,16 @@ namespace Advent_of_Code.Days
             binaryTransmission = transmissionBuilder.ToString();
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             ParsingReport report = Parse(binaryTransmission);
-            WriteSolution1(VerisonNumberSum(report.ParsedPacket));
+            return VerisonNumberSum(report.ParsedPacket);
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             ParsingReport report = Parse(binaryTransmission);
-            WriteSolution2(CalculatePacketValue(report.ParsedPacket));
+            return CalculatePacketValue(report.ParsedPacket);
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Advent_of_Code.Days
             }
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             int risk = 0;
 
@@ -50,10 +50,10 @@ namespace Advent_of_Code.Days
                 }
             }
 
-            WriteSolution1(risk);
+            return risk;
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             TraversedCell[,] traversalMap = BuildTraversedCellMap();
 
@@ -71,7 +71,7 @@ namespace Advent_of_Code.Days
                 }
             }
 
-            WriteSolution2(basinSizes.OrderBy(size => size).Reverse().Take(3).Aggregate((a, b) => a * b));
+            return basinSizes.OrderBy(size => size).Reverse().Take(3).Aggregate((a, b) => a * b);
         }
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace Advent_of_Code.Days
             bitCount = entries[0].Length;
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             int gamma = 0;
             for (int i = 0; i < bitCount; i++)
@@ -43,10 +43,10 @@ namespace Advent_of_Code.Days
             int flipMask = (1 << bitCount) - 1;
             int epsilon = gamma ^ flipMask;
 
-            WriteSolution1(epsilon * gamma);
+            return epsilon * gamma;
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             int bitCursor = 0;
             int bitLength = entries[0].Length;
@@ -91,7 +91,7 @@ namespace Advent_of_Code.Days
             }
 
             int lifeSupportRating = Convert.ToInt32(oxygenCandidates[0], 2) * Convert.ToInt32(c02Candiates[0], 2);
-            WriteSolution2(lifeSupportRating);
+            return lifeSupportRating;
         }
 
         /// <summary>

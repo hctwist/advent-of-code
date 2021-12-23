@@ -12,14 +12,21 @@ namespace Advent_of_Code
     internal abstract class AdventDay
     {
         /// <summary>
+        /// A string to return from <see cref="SolvePuzzle1"/> or <see cref="SolvePuzzle2"/> when no solution has been found.
+        /// </summary>
+        protected const string NoSolutionFound = "No solution found.";
+
+        /// <summary>
         /// Solves the day's first puzzle.
         /// </summary>
-        internal abstract void SolvePuzzle1();
+        /// <returns>The solution.</returns>
+        internal abstract object? SolvePuzzle1();
 
         /// <summary>
         /// Solves the day's second puzzle.
         /// </summary>
-        internal abstract void SolvePuzzle2();
+        /// <returns>The solution.</returns>
+        internal abstract object? SolvePuzzle2();
 
         /// <summary>
         /// Called between solving puzzle one and two to reset all state.
@@ -60,26 +67,6 @@ namespace Advent_of_Code
         protected T[] GetInputData<T>(string separator, Func<string, T> selector)
         {
             return GetInputData(separator).Select(selector).ToArray();
-        }
-
-        /// <summary>
-        /// Prints out the solution to the first problem.
-        /// </summary>
-        /// <param name="solution">The solution.</param>
-        protected static void WriteSolution1(object solution)
-        {
-            Console.WriteLine("Solution 1:");
-            Console.WriteLine(solution);
-        }
-
-        /// <summary>
-        /// Prints out the solution to the second problem.
-        /// </summary>
-        /// <param name="solution">The solution.</param>
-        protected static void WriteSolution2(object solution)
-        {
-            Console.WriteLine("Solution 2:");
-            Console.WriteLine(solution);
         }
     }
 }

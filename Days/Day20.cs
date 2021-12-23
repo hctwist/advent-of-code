@@ -56,16 +56,16 @@ namespace Advent_of_Code.Days
             };
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             Image enhancedImage = Enhance(2);
-            Console.WriteLine(enhancedImage.LitPixelCount());
+            return enhancedImage.LitPixelCount();
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             Image enhancedImage = Enhance(50);
-            Console.WriteLine(enhancedImage.LitPixelCount());
+            return enhancedImage.LitPixelCount();
         }
 
         /// <summary>
@@ -234,6 +234,26 @@ namespace Advent_of_Code.Days
                 }
 
                 return litPixelCount;
+            }
+
+            public override string ToString()
+            {
+                StringBuilder builder = new();
+
+                for (int row = 0; row < Pixels.GetLength(0); row++)
+                {
+                    for (int column = 0; column < Pixels.GetLength(1); column++)
+                    {
+                        builder.Append(Pixels[row, column] ? '■' : ' ');
+                    }
+
+                    if (row != Pixels.GetLength(0) - 1)
+                    {
+                        builder.AppendLine();
+                    }
+                }
+
+                return builder.ToString();
             }
         }
     }

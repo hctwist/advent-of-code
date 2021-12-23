@@ -46,7 +46,7 @@ namespace Advent_of_Code.Days
             caveMap = new(start, end);
         }
 
-        internal override void SolvePuzzle1()
+        internal override object? SolvePuzzle1()
         {
             int totalPaths = 0;
 
@@ -55,10 +55,10 @@ namespace Advent_of_Code.Days
                 totalPaths += FindNumberOfDistinctPathsWithOneSmallCaveVisit(node, new HashSet<Cave>());
             }
 
-            WriteSolution1(totalPaths);
+            return totalPaths;
         }
 
-        internal override void SolvePuzzle2()
+        internal override object? SolvePuzzle2()
         {
             int totalPaths = 0;
 
@@ -67,7 +67,7 @@ namespace Advent_of_Code.Days
                 totalPaths += FindNumberOfDistinctPathsWithAnExtraSmallCaveVisit(node, new HashSet<Cave>(), false);
             }
 
-            WriteSolution2(totalPaths);
+            return totalPaths;
         }
 
         /// <summary>
